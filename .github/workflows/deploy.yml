@@ -12,9 +12,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+      
       - name: Build with Tailwind CSS
         run: |
-          npm install -g tailwindcss
           npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify
       
       - name: Deploy to GitHub Pages
