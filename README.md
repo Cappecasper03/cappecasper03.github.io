@@ -35,10 +35,6 @@ The website is automatically deployed to GitHub Pages whenever changes are pushe
 
 https://cappecasper03.github.io/
 
-## License
-
-MIT License
-
 ---
 
 **Note:** This website was built with the help of AI development tools.
