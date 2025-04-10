@@ -1,87 +1,197 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casper Juvas - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .dark-mode-toggle {
+            transition: all 0.3s ease;
+        }
+        .dark .dark-mode-toggle {
+            background-color: #1f2937;
+        }
+        .section-header {
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: theme('colors.primary.500');
+        }
+    </style>
 </head>
-<body class="bg-gray-100">
-    <nav class="bg-white shadow-lg">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-200 transition-colors duration-300">
+    <nav class="bg-white dark:bg-gray-800 shadow-lg">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between">
-                <div class="flex space-x-7">
-                    <div class="flex items-center py-4">
-                        <h1 class="text-xl font-bold text-gray-800">Casper Juvas</h1>
-                    </div>
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Casper Juvas</h1>
                 </div>
+                <button 
+                    onclick="document.documentElement.classList.toggle('dark')"
+                    class="dark-mode-toggle p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </nav>
 
     <main class="max-w-6xl mx-auto px-4 py-8">
-        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
-            <h2 class="text-3xl font-bold mb-4">About Me</h2>
-            <p class="text-gray-700 mb-4">
+        <section class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8">
+            <div class="section-header">
+                <h2 class="text-4xl font-bold mb-4">About Me</h2>
+            </div>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">
                 I am a C++ programmer that have worked mostly in Unreal Engine but I also have worked in an inhouse engine. 
                 I have general knowledge about a lot of things including gameplay, graphics and systems.
             </p>
         </section>
 
-        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
-            <h2 class="text-3xl font-bold mb-4">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <section class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8">
+            <div class="section-header">
+                <h2 class="text-4xl font-bold mb-4">Projects</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Project 1 -->
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <h3 class="text-xl font-bold mb-2">Burglar</h3>
-                    <ul class="list-disc list-inside text-gray-700">
-                        <li>Genre: Horror & Puzzle</li>
-                        <li>Platform: PSVR 2</li>
-                        <li>Duration: 9 weeks</li>
-                        <li>Engine: Unreal Engine 5</li>
+                <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-bold mb-3">Burglar</h3>
+                    <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                            Genre: Horror & Puzzle
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                            Platform: PSVR 2
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            Duration: 9 weeks
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            Engine: Unreal Engine 5
+                        </li>
                     </ul>
                 </div>
                 
                 <!-- Project 2 -->
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <h3 class="text-xl font-bold mb-2">Full Moon Fears</h3>
-                    <ul class="list-disc list-inside text-gray-700">
-                        <li>Genre: Horror</li>
-                        <li>Platform: PC</li>
-                        <li>Duration: 6 weeks</li>
-                        <li>Engine: Unreal Engine 5</li>
+                <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-bold mb-3">Full Moon Fears</h3>
+                    <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                            Genre: Horror
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                            Platform: PC
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            Duration: 6 weeks
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            Engine: Unreal Engine 5
+                        </li>
                     </ul>
                 </div>
                 
                 <!-- Project 3 -->
-                <div class="bg-gray-50 p-6 rounded-lg">
-                    <h3 class="text-xl font-bold mb-2">School Specialization</h3>
-                    <ul class="list-disc list-inside text-gray-700">
-                        <li>Duration: 4 weeks</li>
-                        <li>Engine: Tengine</li>
+                <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-bold mb-3">School Specialization</h3>
+                    <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            Duration: 4 weeks
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            Engine: Tengine
+                        </li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section class="bg-white rounded-lg shadow-lg p-8">
-            <h2 class="text-3xl font-bold mb-4">Contact</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                    <h3 class="text-lg font-semibold mb-2">Email</h3>
-                    <p class="text-gray-700">03repsac@gmail.com</p>
+        <section class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
+            <div class="section-header">
+                <h2 class="text-4xl font-bold mb-4">Contact</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-4 text-center">
+                    <h3 class="text-xl font-semibold mb-2">Email</h3>
+                    <p class="text-gray-700 dark:text-gray-300">03repsac@gmail.com</p>
                 </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-2">Phone</h3>
-                    <p class="text-gray-700">+47 46 96 65 80</p>
+                <div class="p-4 text-center">
+                    <h3 class="text-xl font-semibold mb-2">Phone</h3>
+                    <p class="text-gray-700 dark:text-gray-300">+47 46 96 65 80</p>
                 </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-2">LinkedIn</h3>
-                    <a href="https://www.linkedin.com/in/casper-juvas-0b843627b/" class="text-blue-600 hover:text-blue-800">LinkedIn Profile</a>
+                <div class="p-4 text-center">
+                    <h3 class="text-xl font-semibold mb-2">LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/casper-juvas-0b843627b/" 
+                       class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                    >LinkedIn Profile</a>
                 </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-2">GitHub</h3>
-                    <a href="https://github.com/Cappecasper03" class="text-blue-600 hover:text-blue-800">GitHub Profile</a>
+                <div class="p-4 text-center">
+                    <h3 class="text-xl font-semibold mb-2">GitHub</h3>
+                    <a href="https://github.com/Cappecasper03" 
+                       class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                    >GitHub Profile</a>
                 </div>
             </div>
         </section>
