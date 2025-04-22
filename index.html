@@ -12,14 +12,18 @@
 <body class="bg-gray-900 text-gray-200 transition-colors duration-300">
     <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-800 shadow-lg">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-center items-center h-16">
-                <div class="flex space-x-8">
-                    <a href="#about"
-                        class="text-gray-300 hover:text-gray-100 transition-colors font-medium">About</a>
-                    <a href="#projects"
-                        class="text-gray-300 hover:text-gray-100 transition-colors font-medium">Projects</a>
-                    <a href="#contact"
-                        class="text-gray-300 hover:text-gray-100 transition-colors font-medium">Contact</a>
+            <div class="nav-container h-16">
+                <div class="flex justify-between md:justify-center items-center h-full relative">
+                    <button class="mobile-nav-button text-gray-300 hover:text-gray-100 md:hidden" aria-label="Toggle menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                    <div class="nav-links">
+                        <a href="#about" class="text-gray-300 hover:text-gray-100 transition-colors font-medium">About</a>
+                        <a href="#projects" class="text-gray-300 hover:text-gray-100 transition-colors font-medium">Projects</a>
+                        <a href="#contact" class="text-gray-300 hover:text-gray-100 transition-colors font-medium">Contact</a>
+                    </div>
                 </div>
             </div>
         </div>
