@@ -1,0 +1,28 @@
+/* Common styles shared across all pages */
+.dark-mode-toggle {
+    transition: all 0.3s ease;
+}
+
+.dark .dark-mode-toggle {
+    background-color: #1f2937;
+}
+
+.section-header {
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #1f2937;
+}
+
+/* Shared navigation styles */
+nav {
+    backdrop-filter: blur(8px);
+}
