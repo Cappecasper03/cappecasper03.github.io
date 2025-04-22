@@ -32,54 +32,101 @@
 		</nav>
 
 		<main class="max-w-6xl mx-auto px-4 py-8 mt-24">
-			<section class="bg-gray-800 rounded-xl shadow-lg p-8 mb-8">
-				<h1 class="text-4xl font-bold mb-6">Burglar</h1>
+            <section class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl shadow-2xl p-8 mb-8">
+                <div class="section-header mb-8">
+                    <h1 class="text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">Burglar</h1>
+                    <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full"></div>
+                </div>
 
-				<div class="mb-8">
-					<p class="mb-4 text-gray-300 leading-relaxed">
-						This was a group game project in school where programmers, artist and designers worked together to create a
-						game.
-					</p>
+                <div class="space-y-8">
+                    <div class="bg-gradient-to-br from-gray-700/50 to-gray-600/50 p-6 rounded-xl shadow-lg backdrop-blur-sm">
+                        <p class="mb-4 text-gray-300 leading-relaxed">
+                            This was a group game project in school where programmers, artist and designers worked together to create a
+                            game.
+                        </p>
 
-					<p class="text-gray-300 leading-relaxed">
-						Burglar is a VR robbery simulation game with horror elements. As an aspiring thief, you break into homes to
-						liberate as many valuables as possible without getting caught, and try to escape with your freedom… and life!
-					</p>
-				</div>
+                        <p class="text-gray-300 leading-relaxed">
+                            Burglar is a VR robbery simulation game with horror elements. As an aspiring thief, you break into homes to
+                            liberate as many valuables as possible without getting caught, and try to escape with your freedom… and life!
+                        </p>
+                    </div>
 
-				<div class="mb-8">
-					<h2 class="text-2xl font-semibold mb-4">Contributions</h2>
+                    <div class="space-y-6">
+                        <div class="section-header mb-6">
+                            <h2 class="text-2xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">Contributions</h2>
+                            <div class="w-16 h-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full"></div>
+                        </div>
 
-					<div class="mb-6">
-						<h3 class="text-xl font-semibold mb-3">Player</h3>
-						<ul class="list-disc list-inside text-gray-300 space-y-2">
-							<li>PS VR 2 Controls using the joysticks with both movement and snap rotation</li>
-							<li>Body is blocked by world</li>
-							<li>
-								Dynamic height calculated from the VR headset to block you from going through stuff but still being able
-								to crawl through small openings
-							</li>
-							<li>Hands can interact with physics actors</li>
-						</ul>
-					</div>
+                        <div class="bg-gradient-to-br from-gray-700/50 to-gray-600/50 p-6 rounded-xl shadow-lg backdrop-blur-sm">
+                            <h3 class="text-xl font-bold mb-4 text-blue-400">Player</h3>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                    </svg>
+                                    <span>PS VR 2 Controls using the joysticks with both movement and snap rotation</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                    </svg>
+                                    <span>Body is blocked by world</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                    </svg>
+                                    <span>Dynamic height calculated from the VR headset to block you from going through stuff but still being able to crawl through small openings</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                    </svg>
+                                    <span>Hands can interact with physics actors</span>
+                                </li>
+                            </ul>
+                        </div>
 
-					<div class="mb-6">
-						<h3 class="text-xl font-semibold mb-3">Interacting</h3>
-						<ul class="list-disc list-inside text-gray-300 space-y-2">
-							<li>Different components that can be put on actors to get different kinds of interactions</li>
-							<li>Grabbed objects are dropped if the hand gets too far away from the object</li>
-							<li>Grabbing can be done freely on some items but others snap into specific positions</li>
-							<li>
-								Grabbing is done by checking if there is anything of the grabbable type near the hand that is free to pick
-								up and then it is attached to the hand
-							</li>
-							<li>Stealing is done by just checking if the object is moved over the moneybag</li>
-							<li>Using objects is just by clicking a button while an object that supports interactions is held</li>
-						</ul>
-					</div>
-				</div>
-			</section>
-		</main>
+						<div class="bg-gradient-to-br from-gray-700/50 to-gray-600/50 p-6 rounded-xl shadow-lg backdrop-blur-sm">
+                            <h3 class="text-xl font-bold mb-4 text-blue-400">Interacting</h3>
+							<p>Interacting is done using different components that can be put on actors to get different kinds of interactions</p>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                    </svg>
+                                    <span>Grabbed objects are dropped if the hand gets too far away from the object</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                    </svg>
+                                    <span>Grabbing can be done freely on some items but others snap into specific positions</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                    </svg>
+                                    <span>Grabbing is done by checking if there is anything of the grabbable type near the hand that is free to pick up and then it is attached to the hand</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                    </svg>
+                                    <span>Stealing is done by just checking if the object is moved over the moneybag</span>
+                                </li>
+								<li class="flex items-center space-x-2">
+                                    <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                    </svg>
+                                    <span>Using objects is just by clicking a button while an object that supports interactions is held</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
 
 		<script src="../js/common.js"></script>
 	</body>
