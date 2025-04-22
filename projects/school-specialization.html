@@ -1,79 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Specialization - School Project</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../styles.css">
-</head>
-<body class="bg-gray-900 text-gray-200">
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-800 shadow-lg">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center h-16">
-                <a href="../index.html" class="text-gray-300 hover:text-gray-100 transition-colors font-medium">← Back to Portfolio</a>
-            </div>
-        </div>
-    </nav>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>School Specialization - School Project</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="stylesheet" href="../styles.css" />
+	</head>
+	<body class="bg-gray-900 text-gray-200">
+		<nav class="fixed top-0 left-0 right-0 z-50 bg-gray-800 shadow-lg">
+			<div class="max-w-6xl mx-auto px-4">
+				<div class="flex justify-between items-center h-16">
+					<a href="../index.html" class="text-gray-300 hover:text-gray-100 transition-colors font-medium"
+						>← Back to Portfolio</a
+					>
+				</div>
+			</div>
+		</nav>
 
-    <main class="max-w-6xl mx-auto px-4 py-8 mt-24">
-        <section class="bg-gray-800 rounded-xl shadow-lg p-8 mb-8">
-            <div class="section-header">
-                <h1 class="text-4xl font-bold mb-4">School Specialization</h1>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
-                <div class="space-y-4">
-                    <div>
-                        <h2 class="text-2xl font-semibold mb-3">Project Overview</h2>
-                        <p class="text-gray-300">A specialized project developed using the Tengine engine, focusing on core game development concepts and engine functionality.</p>
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-semibold mb-3">Technical Details</h2>
-                        <ul class="space-y-2 text-gray-300">
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                Development Duration: 4 weeks
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                                Engine: Tengine
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="space-y-4">
-                    <div>
-                        <h2 class="text-2xl font-semibold mb-3">Key Features</h2>
-                        <ul class="space-y-2 text-gray-300">
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                                Custom engine integration
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                                Core gameplay mechanics
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                                Engine feature utilization
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+		<main class="max-w-6xl mx-auto px-4 py-8 mt-24">
+			<section class="bg-gray-800 rounded-xl shadow-lg p-8 mb-8">
+				<h1 class="text-4xl font-bold mb-6">School Specialization Project</h1>
 
-    <script src="../script.js"></script>
-</body>
+				<div class="mb-8">
+					<p class="mb-4 text-gray-300 leading-relaxed">
+						This was a project that I did as a specialization assignment in school where we had a duration of 4 weeks
+						at the end of the school semester to work on it.
+					</p>
+					<p class="text-gray-300 leading-relaxed">
+						The project I chose to do was an efficient crowd pathfinder. The idea was to make it work somewhat like a
+						survival game where enemies spawn and keep going towards you. The problem I was solving was that it isn't
+						good for the performance if every single enemy searches for its own path towards you, so I reduced the
+						paths needed.
+					</p>
+				</div>
+
+				<div class="mb-8">
+					<h2 class="text-2xl font-semibold mb-4">Basic Info</h2>
+
+					<div class="space-y-6">
+							<div class="mb-6">
+							<h3 class="text-xl font-semibold mb-3">Worlds</h3>
+							<ul class="list-disc list-inside text-gray-300 space-y-2">
+								<li>
+									I chose to use multiple worlds for performance reasons and in a real game there would be
+									another with all the graphics
+								</li>
+								<li>
+									Collision World is optimized using as few triangles as possible for better collision
+									performance
+								</li>
+								<li>
+									Navigation World is optimized with more triangles but only where enemies can walk to get
+									better paths
+								</li>
+							</ul>
+						</div>
+
+							<div class="mb-6">
+							<h3 class="text-xl font-semibold mb-3">Navigation Mesh</h3>
+							<p class="text-gray-300 leading-relaxed">
+								The navigation mesh is created on world creation to make pathfinding possible and fast by only
+								creating it once and saving all the nodes for later use
+							</p>
+						</div>
+
+							<div class="mb-6">
+							<h3 class="text-xl font-semibold mb-3">Octree</h3>
+							<ul class="list-disc list-inside text-gray-300 space-y-2">
+								<li>
+									The octree is static and created based on the navigation mesh to reduce nodes needed by only
+									creating nodes that is close to the navigation mesh
+								</li>
+								<li>
+									It is then used to group enemies together and find overlapping paths so the amount of paths
+									can be reduced by giving the same path to multiple enemies
+								</li>
+								<li>
+									Enemies also use the octree to reduce how many other enemies we collision check against by
+									only doing it against the enemies in the nearest octree nodes
+								</li>
+							</ul>
+						</div>
+
+							<div class="mb-6">
+							<h3 class="text-xl font-semibold mb-3">Pathfinding</h3>
+							<ul class="list-disc list-inside text-gray-300 space-y-2">
+								<li>
+									The pathfinding is done using the A* algorithm to first get a path and is then funneled to get
+									a more realistic path
+								</li>
+								<li>
+									I am also using multithreading to avoid blocking the main thread to get better performance
+									because the paths are constantly being updated one by one
+								</li>
+							</ul>
+						</div>
+
+							<div class="mb-6">
+							<h3 class="text-xl font-semibold mb-3">Enemies</h3>
+							<ul class="list-disc list-inside text-gray-300 space-y-2">
+								<li>
+									The enemies are simply walking towards the next point on the path it is assigned while also
+									avoiding walls and each other
+								</li>
+								<li>The enemy models are also gpu instanced to increase performance</li>
+							</ul>
+						</div>
+
+							<div class="mb-6">
+							<h3 class="text-xl font-semibold mb-3">How it works ( Gameloop )</h3>
+							<div class="bg-gray-700 p-6 rounded-lg">
+								<ol class="list-decimal list-inside text-gray-300 space-y-2">
+									<li>Update Player Movement</li>
+									<li>
+										Update Pathfinding Manager:
+										<ul class="list-disc pl-6 mt-2">
+											<li>Remove paths that start in an octree node without enemies</li>
+											<li>
+												Add paths that start in an octree node with enemies, if it didn't already exist
+											</li>
+											<li>Loop through all paths and remove the ones that has another path through it</li>
+											<li>Change path to calculate, if the current one is done</li>
+										</ul>
+									</li>
+									<li>
+										Update Enemy Manager:
+										<ul class="list-disc pl-6 mt-2">
+											<li>
+												Set path goal position to player position and assign path to the enemies in the
+												same octree node as the path start
+											</li>
+											<li>
+												Update Enemies:
+												<ul class="list-disc pl-6 mt-2">
+													<li>
+														Change the target point to the farthest point it can see or one further if
+														the closest point is the same point or further
+													</li>
+													<li>
+														Collide with other nearby enemies and turn away from them. Go idle if we
+														turn to many times because then there are to many enemies around
+													</li>
+													<li>Update rotation and movement</li>
+													<li>Make sure enemy is on the ground and doesn't go through walls</li>
+												</ul>
+											</li>
+											<li>Update enemy in octree</li>
+											<li>Update enemy instancing buffer</li>
+										</ul>
+									</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<script src="../script.js"></script>
+	</body>
 </html>

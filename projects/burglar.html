@@ -1,91 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Burglar - School Project</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../styles.css">
-</head>
-<body class="bg-gray-900 text-gray-200">
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-800 shadow-lg">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center h-16">
-                <a href="../index.html" class="text-gray-300 hover:text-gray-100 transition-colors font-medium">← Back to Portfolio</a>
-            </div>
-        </div>
-    </nav>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Burglar - School Project</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="stylesheet" href="../styles.css" />
+	</head>
+	<body class="bg-gray-900 text-gray-200">
+		<nav class="fixed top-0 left-0 right-0 z-50 bg-gray-800 shadow-lg">
+			<div class="max-w-6xl mx-auto px-4">
+				<div class="flex justify-between items-center h-16">
+					<a href="../index.html" class="text-gray-300 hover:text-gray-100 transition-colors font-medium"
+						>← Back to Portfolio</a
+					>
+				</div>
+			</div>
+		</nav>
 
-    <main class="max-w-6xl mx-auto px-4 py-8 mt-24">
-        <section class="bg-gray-800 rounded-xl shadow-lg p-8 mb-8">
-            <div class="section-header">
-                <h1 class="text-4xl font-bold mb-4">Burglar</h1>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
-                <div class="space-y-4">
-                    <div>
-                        <h2 class="text-2xl font-semibold mb-3">Project Overview</h2>
-                        <p class="text-gray-300">A horror and puzzle game developed for PSVR 2, combining immersive virtual reality with challenging gameplay elements.</p>
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-semibold mb-3">Technical Details</h2>
-                        <ul class="space-y-2 text-gray-300">
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                </svg>
-                                Genre: Horror & Puzzle
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                                </svg>
-                                Platform: PSVR 2
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                Development Duration: 9 weeks
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                                Engine: Unreal Engine 5
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="space-y-4">
-                    <div>
-                        <h2 class="text-2xl font-semibold mb-3">Key Features</h2>
-                        <ul class="space-y-2 text-gray-300">
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                                VR-optimized horror mechanics
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                                Immersive puzzle solving
-                            </li>
-                            <li class="flex items-center">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                                PSVR 2 controller integration
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+		<main class="max-w-6xl mx-auto px-4 py-8 mt-24">
+			<section class="bg-gray-800 rounded-xl shadow-lg p-8 mb-8">
+				<h1 class="text-4xl font-bold mb-6">Burglar</h1>
 
-    <script src="../script.js"></script>
-</body>
+				<div class="mb-8">
+					<p class="mb-4 text-gray-300 leading-relaxed">
+						This was a group game project in school where programmers, artist and designers worked together to create a
+						game.
+					</p>
+
+					<p class="text-gray-300 leading-relaxed">
+						Burglar is a VR robbery simulation game with horror elements. As an aspiring thief, you break into homes to
+						liberate as many valuables as possible without getting caught, and try to escape with your freedom… and life!
+					</p>
+				</div>
+
+				<div class="mb-8">
+					<h2 class="text-2xl font-semibold mb-4">Contributions</h2>
+
+					<div class="mb-6">
+						<h3 class="text-xl font-semibold mb-3">Player</h3>
+						<ul class="list-disc list-inside text-gray-300 space-y-2">
+							<li>PS VR 2 Controls using the joysticks with both movement and snap rotation</li>
+							<li>Body is blocked by world</li>
+							<li>
+								Dynamic height calculated from the VR headset to block you from going through stuff but still being able
+								to crawl through small openings
+							</li>
+							<li>Hands can interact with physics actors</li>
+						</ul>
+					</div>
+
+					<div class="mb-6">
+						<h3 class="text-xl font-semibold mb-3">Interacting</h3>
+						<ul class="list-disc list-inside text-gray-300 space-y-2">
+							<li>Different components that can be put on actors to get different kinds of interactions</li>
+							<li>Grabbed objects are dropped if the hand gets too far away from the object</li>
+							<li>Grabbing can be done freely on some items but others snap into specific positions</li>
+							<li>
+								Grabbing is done by checking if there is anything of the grabbable type near the hand that is free to pick
+								up and then it is attached to the hand
+							</li>
+							<li>Stealing is done by just checking if the object is moved over the moneybag</li>
+							<li>Using objects is just by clicking a button while an object that supports interactions is held</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<script src="../script.js"></script>
+	</body>
 </html>
