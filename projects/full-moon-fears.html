@@ -191,9 +191,58 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Gallery Section -->
+                    <div class="space-y-6">
+                        <div class="section-header mb-6">
+                            <h2 class="text-2xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">Gallery</h2>
+                            <div class="w-16 h-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full"></div>
+                        </div>
+
+                        <!-- Trailer -->
+                        <div class="bg-gradient-to-br from-gray-700/50 to-gray-600/50 p-6 rounded-xl shadow-lg backdrop-blur-sm">
+                            <h3 class="text-xl font-bold mb-4 text-blue-400">Trailer</h3>
+                            <div class="aspect-video">
+                                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/REHJYF1G0zY?si=JkP5ZGBa1dwAplzh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="rounded-lg"></iframe>
+                            </div>
+                        </div>
+
+                        <!-- Images -->
+                        <div class="bg-gradient-to-br from-gray-700/50 to-gray-600/50 p-6 rounded-xl shadow-lg backdrop-blur-sm">
+                            <h3 class="text-xl font-bold mb-4 text-blue-400">Images</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                <img src="../documents/projects/full-moon-fears/images/full-moon-fears-1.jpg" alt="Full Moon Fears Screenshot 1" class="rounded-lg w-full h-48 object-cover hover:scale-105 transition-transform cursor-pointer">
+                                <img src="../documents/projects/full-moon-fears/images/full-moon-fears-2.jpg" alt="Full Moon Fears Screenshot 2" class="rounded-lg w-full h-48 object-cover hover:scale-105 transition-transform cursor-pointer">
+                            </div>
+                        </div>
+
+                        <!-- Videos -->
+                        <div class="bg-gradient-to-br from-gray-700/50 to-gray-600/50 p-6 rounded-xl shadow-lg backdrop-blur-sm">
+                            <h3 class="text-xl font-bold mb-4 text-blue-400">Videos</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <video class="rounded-lg w-full hover:scale-105 transition-transform cursor-pointer" controls>
+                                    <source src="../documents/projects/full-moon-fears/videos/patrol-to-chasing.mp4" type="video/mp4">
+                                </video>
+                                <video class="rounded-lg w-full hover:scale-105 transition-transform cursor-pointer" controls>
+                                    <source src="../documents/projects/full-moon-fears/videos/pitchfork-hit-and-throw.mp4" type="video/mp4">
+                                </video>
+                                <video class="rounded-lg w-full hover:scale-105 transition-transform cursor-pointer" controls>
+                                    <source src="../documents/projects/full-moon-fears/videos/torch-hit-and-burn.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
+
+        <!-- Image Overlay -->
+        <div id="imageOverlay" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center">
+            <button class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300" onclick="closeImageOverlay()">&times;</button>
+            <button id="prevImage" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-6xl hover:text-gray-300 p-4">&lt;</button>
+            <img id="overlayImage" src="" alt="Full screen image" class="max-h-[90vh] max-w-[90vw] object-contain">
+            <button id="nextImage" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-6xl hover:text-gray-300 p-4">&gt;</button>
+        </div>
 
 		<script src="../js/common.js"></script>
 	</body>
