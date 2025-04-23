@@ -26,3 +26,16 @@
 nav {
     backdrop-filter: blur(8px);
 }
+
+/* Reset any transform effects */
+section {
+    transition: none;
+    transform: none;
+}
+
+/* Keep hover effects only on project cards */
+.project-card:hover,
+[href^="projects/"]:hover .group-hover\:scale-\[1\.02\] {
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
