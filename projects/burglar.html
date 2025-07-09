@@ -6,9 +6,22 @@
 		<title>Burglar - School Project</title>
 		<script src="https://cdn.tailwindcss.com"></script>
 		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/game-theme.css" />
 		<link rel="stylesheet" href="../css/projects/burglar.css" />
 	</head>
-	<body class="bg-gray-900 text-gray-200">
+	<body>
+		<script>
+			if (sessionStorage.getItem('hasVisited')) {
+				document.documentElement.style.overflow = 'auto';
+				document.body.style.overflow = 'auto';
+				document.getElementById('loading-screen').style.display = 'none';
+			}
+		</script>
+		<div id="loading-screen">
+			<div class="loading-bar">
+				<div class="loading-progress"></div>
+			</div>
+		</div>
 		<nav class="fixed top-0 left-0 right-0 z-50 bg-gray-800 shadow-lg">
 			<div class="max-w-6xl mx-auto px-4">
 				<div class="flex justify-between items-center h-16">
@@ -124,7 +137,7 @@
 						<!-- Trailer -->
 						<div class="bg-gradient-to-br from-gray-700/50 to-gray-600/50 p-6 rounded-xl shadow-lg backdrop-blur-sm">
 							<h3 class="text-xl font-bold mb-4 text-blue-400">Trailer</h3>
-							<div style="padding: 56.67% 0 0 0; position: relative">
+							<div style="padding: 56.67% 0 0; position: relative">
 								<iframe
 									src="https://player.vimeo.com/video/831541526?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
 									frameborder="0"

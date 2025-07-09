@@ -79,27 +79,51 @@ document.addEventListener('DOMContentLoaded', () => {
         overlayImage.alt = img.alt;
     }
 
-    // Hero name typing animation
-    const heroNameElement = document.getElementById('hero-name');
-    const originalName = heroNameElement.textContent;
-    heroNameElement.textContent = ''; // Clear content initially
-    let charIndex = 0;
-    const typingSpeed = 100; // milliseconds per character
+    // Loading screen functionality
+    const loadingScreen = document.getElementById('loading-screen');
+    const hasVisited = sessionStorage.getItem('hasVisited');
 
-    function typeHeroName() {
-        if (charIndex < originalName.length) {
-            heroNameElement.textContent += originalName.charAt(charIndex);
-            charIndex++;
-            setTimeout(typeHeroName, typingSpeed);
+    if (loadingScreen) {
+        if (!hasVisited) {
+            sessionStorage.setItem('hasVisited', 'true');
+            loadingScreen.style.display = 'flex'; // Show loading screen
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+                document.body.style.overflow = ''; // Reset body overflow
+                startHeroNameTyping();
+            }, 1000); // Hide after 1 second
         } else {
-            const caretSpan = document.createElement('span');
-            caretSpan.textContent = '|';
-            caretSpan.classList.add('caret');
-            heroNameElement.appendChild(caretSpan);
+            loadingScreen.style.display = 'none';
+            document.body.style.overflow = ''; // Reset body overflow
+            startHeroNameTyping();
         }
     }
 
-    typeHeroName();
+    function startHeroNameTyping() {
+        // Hero name typing animation (only on index.html)
+        const heroNameElement = document.getElementById('hero-name');
+        if (heroNameElement) {
+            const originalName = heroNameElement.textContent;
+            heroNameElement.textContent = ''; // Clear content initially
+            let charIndex = 0;
+            const typingSpeed = 100; // milliseconds per character
+
+            function typeHeroName() {
+                if (charIndex < originalName.length) {
+                    heroNameElement.textContent += originalName.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeHeroName, typingSpeed);
+                } else {
+                    const caretSpan = document.createElement('span');
+                    caretSpan.textContent = '|';
+                    caretSpan.classList.add('caret');
+                    heroNameElement.appendChild(caretSpan);
+                }
+            }
+
+            typeHeroName();
+        }
+    }
 });
 
 // Function to close the image overlay

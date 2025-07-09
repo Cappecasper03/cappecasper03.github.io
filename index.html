@@ -7,9 +7,23 @@
 		<title>Casper Juvas - Portfolio</title>
 		<script src="https://cdn.tailwindcss.com"></script>
 		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/game-theme.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 	</head>
 
-	<body class="bg-gray-900 text-gray-200 transition-colors duration-300">
+	<body>
+		<script>
+			if (sessionStorage.getItem('hasVisited')) {
+				document.documentElement.style.overflow = 'auto';
+				document.body.style.overflow = 'auto';
+				document.getElementById('loading-screen').style.display = 'none';
+			}
+		</script>
+		<div id="loading-screen">
+			<div class="loading-bar">
+				<div class="loading-progress"></div>
+			</div>
+		</div>
 		<!-- Image Overlay -->
 		<div id="imageOverlay" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-[9999] hidden">
 			<div class="relative">
@@ -55,12 +69,12 @@
 		<main class="max-w-6xl mx-auto px-4">
 			<section class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl shadow-2xl p-8 mb-8" id="about">
 				<div class="section-header mb-8">
-					<h2 class="text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">About Me</h2>
+					<h2 class="text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">System.AboutMe()</h2>
 					<div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full"></div>
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 					<!-- Left Column: About Me -->
-					<div class="space-y-6 backdrop-blur-sm bg-gray-800/30 rounded-lg p-6 shadow-lg">
+					<div class="bg-gradient-to-br from-gray-700/50 to-gray-600/50 p-6 rounded-lg shadow-lg backdrop-blur-sm">
 						<p class="text-lg leading-relaxed text-gray-300">
 							I am a C++ programmer that have worked mostly in Unreal Engine but I also have worked in an inhouse engine. I have general knowledge about a lot of things including gameplay, graphics and systems.
 						</p>
@@ -68,21 +82,27 @@
 
 					<!-- Right Column: Technical Skills -->
 					<div class="bg-gradient-to-br from-gray-700/50 to-gray-600/50 p-6 rounded-lg shadow-lg backdrop-blur-sm">
-						<p class="text-xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">Technical Skills</p>
+						<p class="text-xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">Engines & APIs</p>
 						<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 							<div class="group">
-								<p class="font-semibold mb-2 text-blue-400">Programming Languages</p>
+								<p class="font-semibold mb-2 text-blue-400">Languages</p>
 								<div class="flex flex-wrap gap-2">
-									<span class="inline-block bg-blue-600/20 text-blue-200 text-xs px-3 py-1 rounded-full hover:bg-blue-500/30 transition-colors duration-200">Modern C++</span>
+									<span class="inline-block bg-blue-600/20 text-blue-200 text-xs px-3 py-1 rounded-full hover:bg-blue-500/30 transition-colors duration-200">C++ (Modern)</span>
 								</div>
 							</div>
 
 							<div class="group">
-								<p class="font-semibold mb-2 text-blue-400">Technologies & Tools</p>
+								<p class="font-semibold mb-2 text-blue-400">Engines & APIs</p>
 								<div class="flex flex-wrap gap-2">
 									<span class="inline-block bg-blue-600/20 text-blue-200 text-xs px-3 py-1 rounded-full hover:bg-blue-500/30 transition-colors duration-200">Unreal Engine</span>
 									<span class="inline-block bg-blue-600/20 text-blue-200 text-xs px-3 py-1 rounded-full hover:bg-blue-500/30 transition-colors duration-200">Vulkan</span>
 									<span class="inline-block bg-blue-600/20 text-blue-200 text-xs px-3 py-1 rounded-full hover:bg-blue-500/30 transition-colors duration-200">OpenGL</span>
+								</div>
+							</div>
+
+							<div class="group">
+								<p class="font-semibold mb-2 text-blue-400">Tools & Version Control</p>
+								<div class="flex flex-wrap gap-2">
 									<span class="inline-block bg-blue-600/20 text-blue-200 text-xs px-3 py-1 rounded-full hover:bg-blue-500/30 transition-colors duration-200">Git</span>
 									<span class="inline-block bg-blue-600/20 text-blue-200 text-xs px-3 py-1 rounded-full hover:bg-blue-500/30 transition-colors duration-200">SVN</span>
 									<span class="inline-block bg-blue-600/20 text-blue-200 text-xs px-3 py-1 rounded-full hover:bg-blue-500/30 transition-colors duration-200">Rider</span>
@@ -91,7 +111,7 @@
 							</div>
 
 							<div class="group">
-								<p class="font-semibold mb-2 text-blue-400">Areas of Interest</p>
+								<p class="font-semibold mb-2 text-blue-400">Specializations</p>
 								<div class="flex flex-wrap gap-2">
 									<span class="inline-block bg-blue-600/20 text-blue-200 text-xs px-3 py-1 rounded-full hover:bg-blue-500/30 transition-colors duration-200">Performance Optimization</span>
 									<span class="inline-block bg-blue-600/20 text-blue-200 text-xs px-3 py-1 rounded-full hover:bg-blue-500/30 transition-colors duration-200">Development Tools</span>
@@ -107,7 +127,7 @@
 
 			<section class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl shadow-2xl p-8 mb-8" id="projects">
 				<div class="section-header mb-8">
-					<h2 class="text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">Personal Projects</h2>
+					<h2 class="text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">System.Projects()</h2>
 					<div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full"></div>
 				</div>
 				<div class="space-y-8">
@@ -153,7 +173,6 @@
 
 					<!-- School Projects Category -->
 					<div>
-						<h3 class="text-2xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">School Projects</h3>
 						<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 							<!-- Project Cards with Enhanced Styling -->
 							<a href="projects/burglar.html" class="block group">
@@ -256,7 +275,7 @@
 
 			<section class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl shadow-2xl p-8 mb-8" id="contact">
 				<div class="section-header mb-8">
-					<h2 class="text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">Contact</h2>
+					<h2 class="text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">System.Contact()</h2>
 					<div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full"></div>
 				</div>
 				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
