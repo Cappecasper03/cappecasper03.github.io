@@ -78,6 +78,28 @@ document.addEventListener('DOMContentLoaded', () => {
         overlayImage.src = img.src;
         overlayImage.alt = img.alt;
     }
+
+    // Hero name typing animation
+    const heroNameElement = document.getElementById('hero-name');
+    const originalName = heroNameElement.textContent;
+    heroNameElement.textContent = ''; // Clear content initially
+    let charIndex = 0;
+    const typingSpeed = 100; // milliseconds per character
+
+    function typeHeroName() {
+        if (charIndex < originalName.length) {
+            heroNameElement.textContent += originalName.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeHeroName, typingSpeed);
+        } else {
+            const caretSpan = document.createElement('span');
+            caretSpan.textContent = '|';
+            caretSpan.classList.add('caret');
+            heroNameElement.appendChild(caretSpan);
+        }
+    }
+
+    typeHeroName();
 });
 
 // Function to close the image overlay

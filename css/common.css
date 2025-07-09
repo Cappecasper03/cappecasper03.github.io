@@ -39,3 +39,17 @@ section {
     transform: scale(1.02);
     transition: all 0.3s ease;
 }
+
+/* Typing Animation for Hero Name */
+.caret {
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
