@@ -81,23 +81,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Loading screen functionality
     const loadingScreen = document.getElementById('loading-screen');
-    const hasVisited = sessionStorage.getItem('hasVisited');
-
     if (loadingScreen) {
-        if (!hasVisited) {
-            sessionStorage.setItem('hasVisited', 'true');
-            loadingScreen.style.display = 'flex'; // Show loading screen
-            setTimeout(() => {
-                loadingScreen.style.display = 'none';
-                document.body.style.overflow = ''; // Reset body overflow
-                startHeroNameTyping();
-            }, 1000); // Hide after 1 second
-        } else {
-            loadingScreen.style.display = 'none';
-            document.body.style.overflow = ''; // Reset body overflow
-            startHeroNameTyping();
-        }
+        loadingScreen.style.display = 'none';
     }
+    document.body.style.overflow = ''; // Reset body overflow
+    startHeroNameTyping();
 
     function startHeroNameTyping() {
         // Hero name typing animation (only on index.html)
