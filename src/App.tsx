@@ -227,30 +227,36 @@ function App() {
                         <ProjectCard
                             title="Burglar"
                             description="Horror & Puzzle game for PSVR 2."
+                            image="/documents/projects/burglar/images/burglar.png"
                             topTags={[
                                 { label: 'School Project', type: 'school' },
                                 { label: '9 Weeks', type: 'duration' }
                             ]}
+                            techTags={['Unreal Engine 5', 'PSVR 2']}
                             footerText="Unreal Engine 5"
                             link="/projects/burglar.html"
                         />
                         <ProjectCard
                             title="Full Moon Fears"
                             description="Survival Horror experience on PC."
+                            image="/documents/projects/full-moon-fears/images/full-moon-fears-1.jpg"
                             topTags={[
                                 { label: 'School Project', type: 'school' },
                                 { label: '6 Weeks', type: 'duration' }
                             ]}
+                            techTags={['Unreal Engine 5', 'Stealth AI']}
                             footerText="Unreal Engine 5"
                             link="/projects/full-moon-fears.html"
                         />
                         <ProjectCard
                             title="School Specialization"
                             description="Deep dive into Tengine architecture."
+                            image="/documents/projects/school-specialization/images/school-specialization-main.png"
                             topTags={[
                                 { label: 'School Project', type: 'school' },
                                 { label: '4 Weeks', type: 'duration' }
                             ]}
+                            techTags={['C++', 'Optimization', 'Crowd AI']}
                             footerText="Tengine"
                             link="/projects/school-specialization.html"
                         />
