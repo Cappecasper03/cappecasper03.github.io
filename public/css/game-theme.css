@@ -1,0 +1,13 @@
+/* Game specific theme overrides or additions */
+:root {
+    --primary-glow: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    --secondary-glow: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.bg-mesh {
+    background-color: transparent;
+    background-image: var(--primary-glow), var(--secondary-glow);
+    background-position: 0% 0%, 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 800px 800px;
+}

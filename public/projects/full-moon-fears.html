@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Full Moon Fears | School Project</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						slate: {
+							850: '#151e2e',
+							900: '#0f172a',
+							950: '#020617',
+						}
+					},
+					fontFamily: {
+						sans: ['Inter', 'sans-serif'],
+						mono: ['JetBrains Mono', 'monospace'],
+						display: ['Oxanium', 'sans-serif'],
+					}
+				}
+			}
+		}
+	</script>
+	<link rel="stylesheet" href="../css/common.css" />
+	<link rel="stylesheet" href="../css/game-theme.css" />
+</head>
+
+<body class="antialiased selection:bg-red-500/30 selection:text-red-200 text-gray-300">
+	<div class="bg-mesh fixed inset-0 pointer-events-none z-[-1]"></div>
+
+	<!-- Image Overlay -->
+	<div id="imageOverlay"
+		class="fixed inset-0 bg-black/90 backdrop-blur-md flex items-center justify-center z-[9999] hidden opacity-0 transition-opacity duration-300">
+		<div class="relative w-full max-w-5xl px-4 flex justify-center">
+			<img id="overlayImage" src="" alt=""
+				class="max-h-[85vh] object-contain rounded-lg shadow-2xl border border-white/10" />
+			<button id="prevImage"
+				class="absolute left-8 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full backdrop-blur transition-all">
+				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+				</svg>
+			</button>
+			<button id="nextImage"
+				class="absolute right-8 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full backdrop-blur transition-all">
+				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+				</svg>
+			</button>
+			<button id="closeOverlay" class="absolute -top-12 right-4 text-gray-400 hover:text-white transition-colors"
+				onclick="closeImageOverlay()">
+				<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+					</path>
+				</svg>
+			</button>
+		</div>
+	</div>
+
+	<!-- Navigation -->
+	<nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-3xl px-4">
+		<div
+			class="glass-nav rounded-full px-4 py-3 flex items-center justify-between shadow-2xl border border-white/5">
+			<a href="../index.html" class="flex items-center text-gray-400 hover:text-white transition-colors group">
+				<svg class="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none"
+					stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7 7-7"></path>
+				</svg>
+				<span class="font-medium">Back to Portfolio</span>
+			</a>
+
+			<div class="flex space-x-1 md:space-x-2 overflow-x-auto">
+				<a href="burglar.html"
+					class="px-3 py-1.5 rounded-full text-xs md:text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all whitespace-nowrap">Burglar</a>
+				<a href="full-moon-fears.html"
+					class="px-3 py-1.5 rounded-full text-xs md:text-sm font-medium bg-red-600/20 text-red-300 border border-red-500/30 whitespace-nowrap">Full
+					Moon Fears</a>
+				<a href="school-specialization.html"
+					class="px-3 py-1.5 rounded-full text-xs md:text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all whitespace-nowrap">Specialization</a>
+				<a href="../cv.html"
+					class="px-3 py-1.5 rounded-full text-xs md:text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all whitespace-nowrap">CV</a>
+			</div>
+		</div>
+	</nav>
+
+	<main class="max-w-6xl mx-auto px-4 pt-32 pb-20">
+		<div class="glass-panel rounded-3xl p-8 md:p-12 mb-12 relative overflow-hidden">
+			<div class="absolute top-0 right-0 p-8 opacity-10">
+			</div>
+
+			<div class="relative z-10">
+				<div class="flex items-center gap-3 mb-6">
+					<span
+						class="px-3 py-1 bg-white/5 text-gray-400 rounded-full text-xs font-mono border border-white/5">School
+						Project</span>
+					<span
+						class="px-3 py-1 bg-white/5 text-gray-400 rounded-full text-xs font-mono border border-white/5">6
+						Weeks</span>
+					<span
+						class="px-3 py-1 bg-white/5 text-gray-400 rounded-full text-xs font-mono border border-white/5">Unreal
+						Engine 5</span>
+					<span
+						class="px-3 py-1 bg-white/5 text-gray-400 rounded-full text-xs font-mono border border-white/5">PC</span>
+					<span
+						class="px-3 py-1 bg-white/5 text-gray-400 rounded-full text-xs font-mono border border-white/5">Survival
+						Horror</span>
+				</div>
+
+				<h1 class="text-5xl md:text-6xl font-black text-white mb-6">Full Moon Fears</h1>
+				<p class="text-xl text-gray-300 max-w-3xl leading-relaxed">
+					Play as a werewolf fleeing persecution. Avoid detection by your former friends and neighbors in this
+					stealth-horror experience where you cannot fight back.
+				</p>
+			</div>
+		</div>
+
+		<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+			<!-- Main Content -->
+			<div class="lg:col-span-2 space-y-8">
+
+				<!-- Overview -->
+				<section class="glass-panel p-8 rounded-2xl">
+					<h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+						<span class="text-red-400">#</span> Overview
+					</h2>
+					<div class="prose prose-invert prose-lg max-w-none text-gray-300">
+						<p>
+							In this group project, you are a newly transformed werewolf who has tragically killed his
+							family.
+							Devastated, you attempt to flee the valley, but the townsfolk are hunting you. You must
+							escape without harming anyone.
+						</p>
+					</div>
+				</section>
+
+				<!-- Contributions -->
+				<section class="glass-panel p-8 rounded-2xl">
+					<h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+						<span class="text-red-400">#</span> My Contributions
+					</h2>
+
+					<div class="space-y-8">
+						<!-- Animation -->
+						<div>
+							<h3 class="text-lg font-bold text-white mb-4 border-l-4 border-red-500 pl-4">Animation
+								Systems</h3>
+							<ul class="grid gap-3 text-gray-300">
+								<li class="bg-white/5 p-3 rounded-lg">Implemented blending functionality for smooth
+									state transitions.</li>
+								<li class="bg-white/5 p-3 rounded-lg">Created immediate set-state logic for hard
+									transitions.</li>
+								<li class="bg-white/5 p-3 rounded-lg">Developed state queries for animation playback
+									status and time.</li>
+							</ul>
+						</div>
+
+						<!-- AI -->
+						<div>
+							<h3 class="text-lg font-bold text-white mb-4 border-l-4 border-blue-500 pl-4">AI
+								Architecture</h3>
+							<div class="space-y-4">
+								<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+									<div class="bg-white/5 p-4 rounded-lg">
+										<h4 class="font-bold text-blue-300 mb-2">Idle & Patrol</h4>
+										<p class="text-sm">Enemies wait or move between points. Sighting the player
+											triggers other states.</p>
+									</div>
+									<div class="bg-white/5 p-4 rounded-lg">
+										<h4 class="font-bold text-blue-300 mb-2">Chase & Attack</h4>
+										<p class="text-sm">Direct pursuit and engagement when in range. Attacks check
+											for weapon overlap.</p>
+									</div>
+									<div class="bg-white/5 p-4 rounded-lg">
+										<h4 class="font-bold text-blue-300 mb-2">Search</h4>
+										<p class="text-sm">Investigates last known player position upon losing line of
+											sight.</p>
+									</div>
+									<div class="bg-white/5 p-4 rounded-lg">
+										<h4 class="font-bold text-blue-300 mb-2">Coordination</h4>
+										<p class="text-sm">Enemies call for backup immediately upon spotting the player.
+										</p>
+									</div>
+								</div>
+
+								<div class="glass-panel bg-black/20 p-4 rounded-lg">
+									<h4 class="font-bold text-white mb-2">Enemy Manager</h4>
+									<p class="text-sm text-gray-400">
+										Class responsible for spawning and destroying enemies based on player proximity
+										triggers, optimizing performance by managing active entities.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Trailer -->
+				<section class="glass-panel p-2 rounded-2xl overflow-hidden">
+					<div class="aspect-video relative">
+						<iframe class="w-full h-full rounded-lg"
+							src="https://www.youtube.com/embed/REHJYF1G0zY?si=JkP5ZGBa1dwAplzh"
+							title="YouTube video player" frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+					</div>
+				</section>
+			</div>
+
+			<!-- Sidebar -->
+			<div class="space-y-8">
+				<!-- Screenshots -->
+				<section class="glass-panel p-6 rounded-2xl">
+					<h3 class="text-xl font-bold text-white mb-4">Gallery</h3>
+					<div class="grid grid-cols-1 gap-4">
+						<img src="https://github.com/Cappecasper03/cappecasper03.github.io/raw/master/documents/projects/full-moon-fears/images/full-moon-fears-1.jpg"
+							alt="Screenshot 1"
+							class="w-full rounded-lg hover:scale-105 transition-transform cursor-pointer border border-white/5" />
+						<img src="https://github.com/Cappecasper03/cappecasper03.github.io/raw/master/documents/projects/full-moon-fears/images/full-moon-fears-2.jpg"
+							alt="Screenshot 2"
+							class="w-full rounded-lg hover:scale-105 transition-transform cursor-pointer border border-white/5" />
+					</div>
+				</section>
+
+				<!-- Videos Grid -->
+				<section class="glass-panel p-6 rounded-2xl">
+					<h3 class="text-xl font-bold text-white mb-4">Gameplay Clips</h3>
+					<div class="space-y-4">
+						<div class="group relative rounded-lg overflow-hidden border border-white/5">
+							<video class="w-full" controls playsinline>
+								<source
+									src="https://github.com/Cappecasper03/cappecasper03.github.io/raw/master/documents/projects/full-moon-fears/videos/patrol-to-chasing.mp4"
+									type="video/mp4" />
+							</video>
+							<div
+								class="p-2 bg-black/50 text-xs text-gray-400 absolute bottom-0 left-0 right-0 pointer-events-none">
+								AI Patrol to Chase</div>
+						</div>
+						<div class="group relative rounded-lg overflow-hidden border border-white/5">
+							<video class="w-full" controls playsinline>
+								<source
+									src="https://github.com/Cappecasper03/cappecasper03.github.io/raw/master/documents/projects/full-moon-fears/videos/pitchfork-hit-and-throw.mp4"
+									type="video/mp4" />
+							</video>
+							<div
+								class="p-2 bg-black/50 text-xs text-gray-400 absolute bottom-0 left-0 right-0 pointer-events-none">
+								Combat Mechanics</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</main>
+
+	<script src="../js/common.js"></script>
+</body>
+
+</html>
