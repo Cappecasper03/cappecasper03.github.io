@@ -1,72 +1,86 @@
 /* Common styles shared across all pages */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oxanium:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
 body {
-    font-family: "Roboto Mono", monospace;
-    background-color: #1a1a2e; /* Dark blue/purple */
-    background-image: url('data:image/svg+xml,%3Csvg width="6" height="6" viewBox="0 0 6 6" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%239C92AC" fill-opacity="0.1" fill-rule="evenodd"%3E%3Cpath d="M0 0h3v1H0V0zm0 2h3v1H0V2zm0 4h3v1H0V4zm3 0h3v1H3V4zm3 2h3v1H3V6zm0-2h3v1H3V2zm0-2h3v1H3V0z"/%3E%3C/g%3E%3C/svg>'); /* Subtle circuit board pattern */
+    font-family: "Inter", sans-serif;
+    background-color: #020617; /* Darkest slate/black */
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.1) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.1) 0px, transparent 50%);
+    background-attachment: fixed;
+    color: #e2e8f0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: Oxanium, sans-serif;
+    font-family: "Oxanium", sans-serif;
+    letter-spacing: -0.02em;
 }
 
-.dark-mode-toggle {
-    transition: all 0.3s ease;
+code, pre, .font-mono {
+    font-family: "JetBrains Mono", monospace;
 }
 
-.dark .dark-mode-toggle {
-    background-color: #1f2937;
+.glass-panel {
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-.section-header {
-    position: relative;
-    padding-bottom: 1rem;
+.glass-nav {
+    background: rgba(2, 6, 23, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.section-header::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background-color: #00f0ff; /* Cyan */
+.text-gradient {
+    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
-/* Shared navigation styles */
-nav {
-    backdrop-filter: blur(8px);
-    background-color: rgb(26 26 46 / 80%); /* Semi-transparent dark blue/purple */
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
 }
-
-/* Reset any transform effects */
-section {
-    transition: none;
-    transform: none;
+::-webkit-scrollbar-track {
+    background: #0f172a;
 }
-
-/* Keep hover effects only on project cards */
-/* stylelint-disable-next-line selector-class-pattern */
-.project-card:hover,
-[href^="projects/"]:hover .group-hover\:scale-\[1\.02\] {
-    transform: scale(1.02);
-    transition: all 0.3s ease;
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
 }
 
 /* Typing Animation for Hero Name */
 .caret {
     animation: blink-caret 0.75s step-end infinite;
-    color: #00f0ff; /* Cyan caret */
+    color: #60a5fa;
 }
 
-
 @keyframes blink-caret {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Custom Utilities */
+.card-hover-effect {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-hover-effect:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.3);
+    border-color: rgba(96, 165, 250, 0.3);
+}
+
+.section-header-line {
+    height: 4px;
+    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    border-radius: 9999px;
+    width: 60px;
 }

@@ -1,235 +1,253 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>School Specialization - School Project</title>
-		<script src="https://cdn.tailwindcss.com"></script>
-		<link rel="stylesheet" href="../css/common.css" />
-		<link rel="stylesheet" href="../css/game-theme.css" />
-		<link rel="stylesheet" href="../css/projects/school-specialization.css" />
-	</head>
-	<body>
-		<nav class="fixed top-0 left-0 right-0 z-50 bg-gray-800 shadow-lg">
-			<div class="max-w-6xl mx-auto px-4">
-				<div class="flex justify-between items-center h-16">
-					<div class="flex items-center space-x-4">
-						<a href="../index.html" class="text-gray-300 hover:text-gray-100 transition-colors font-medium"> ← Back </a>
-					</div>
-					<div class="flex items-center space-x-2 md:space-x-4">
-						<a href="full-moon-fears.html" class="text-gray-300 hover:text-gray-100 transition-colors px-2 py-1 md:px-4 md:py-2 text-sm md:text-base rounded-lg bg-gray-700/50"> Full Moon Fears </a>
-						<a href="school-specialization.html" class="text-gray-300 hover:text-gray-100 transition-colors px-2 py-1 md:px-4 md:py-2 text-sm md:text-base rounded-lg bg-blue-600/50"> Specialization </a>
-						<a href="burglar.html" class="text-gray-300 hover:text-gray-100 transition-colors px-2 py-1 md:px-4 md:py-2 text-sm md:text-base rounded-lg bg-gray-700/50"> Burglar </a>
-						<a href="../cv.html" class="text-gray-300 hover:text-gray-100 transition-colors px-2 py-1 md:px-4 md:py-2 text-sm md:text-base rounded-lg bg-gray-700/50"> CV </a>
-					</div>
-				</div>
+<html lang="en" class="scroll-smooth">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Specialization | School Project</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						slate: {
+							850: '#151e2e',
+							900: '#0f172a',
+							950: '#020617',
+						}
+					},
+					fontFamily: {
+						sans: ['Inter', 'sans-serif'],
+						mono: ['JetBrains Mono', 'monospace'],
+						display: ['Oxanium', 'sans-serif'],
+					}
+				}
+			}
+		}
+	</script>
+	<link rel="stylesheet" href="../css/common.css" />
+	<link rel="stylesheet" href="../css/game-theme.css" />
+</head>
+
+<body class="antialiased selection:bg-green-500/30 selection:text-green-200 text-gray-300">
+	<div class="bg-mesh fixed inset-0 pointer-events-none z-[-1]"></div>
+
+	<!-- Image Overlay -->
+	<div id="imageOverlay"
+		class="fixed inset-0 bg-black/90 backdrop-blur-md flex items-center justify-center z-[9999] hidden opacity-0 transition-opacity duration-300">
+		<div class="relative w-full max-w-5xl px-4 flex justify-center">
+			<img id="overlayImage" src="" alt=""
+				class="max-h-[85vh] object-contain rounded-lg shadow-2xl border border-white/10" />
+			<button id="prevImage"
+				class="absolute left-8 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full backdrop-blur transition-all">
+				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+				</svg>
+			</button>
+			<button id="nextImage"
+				class="absolute right-8 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full backdrop-blur transition-all">
+				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+				</svg>
+			</button>
+			<button id="closeOverlay" class="absolute -top-12 right-4 text-gray-400 hover:text-white transition-colors"
+				onclick="closeImageOverlay()">
+				<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+					</path>
+				</svg>
+			</button>
+		</div>
+	</div>
+
+	<!-- Navigation -->
+	<nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-3xl px-4">
+		<div
+			class="glass-nav rounded-full px-4 py-3 flex items-center justify-between shadow-2xl border border-white/5">
+			<a href="../index.html" class="flex items-center text-gray-400 hover:text-white transition-colors group">
+				<svg class="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none"
+					stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7 7-7"></path>
+				</svg>
+				<span class="font-medium">Back to Portfolio</span>
+			</a>
+
+			<div class="flex space-x-1 md:space-x-2 overflow-x-auto">
+				<a href="burglar.html"
+					class="px-3 py-1.5 rounded-full text-xs md:text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all whitespace-nowrap">Burglar</a>
+				<a href="full-moon-fears.html"
+					class="px-3 py-1.5 rounded-full text-xs md:text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all whitespace-nowrap">Full
+					Moon Fears</a>
+				<a href="school-specialization.html"
+					class="px-3 py-1.5 rounded-full text-xs md:text-sm font-medium bg-green-600/20 text-green-300 border border-green-500/30 whitespace-nowrap">Specialization</a>
+				<a href="../cv.html"
+					class="px-3 py-1.5 rounded-full text-xs md:text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-all whitespace-nowrap">CV</a>
 			</div>
-		</nav>
+		</div>
+	</nav>
 
-		<main class="max-w-6xl mx-auto px-4 py-8 mt-24">
-			<section class="bg-gradient-to-br from-gray-800 to-gray-700 rounded-xl shadow-2xl p-8 mb-8">
-				<div class="section-header mb-8">
-					<h1 class="text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">School Specialization Project</h1>
-					<div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full"></div>
+	<main class="max-w-6xl mx-auto px-4 pt-32 pb-20">
+		<div class="glass-panel rounded-3xl p-8 md:p-12 mb-12 relative overflow-hidden">
+			<div class="absolute top-0 right-0 p-8 opacity-10">
+				<svg class="w-64 h-64 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+					<path
+						d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+				</svg>
+			</div>
+
+			<div class="relative z-10">
+				<div class="flex items-center gap-3 mb-6">
+					<span
+						class="px-3 py-1 bg-white/5 text-gray-400 rounded-full text-xs font-mono border border-white/5">School
+						Project</span>
+					<span
+						class="px-3 py-1 bg-white/5 text-gray-400 rounded-full text-xs font-mono border border-white/5">4
+						Weeks</span>
+					<span
+						class="px-3 py-1 bg-white/5 text-gray-400 rounded-full text-xs font-mono border border-white/5">Tengine</span>
+					<span
+						class="px-3 py-1 bg-white/5 text-gray-400 rounded-full text-xs font-mono border border-white/5">Optimization</span>
+					<span
+						class="px-3 py-1 bg-white/5 text-gray-400 rounded-full text-xs font-mono border border-white/5">AI
+						Pathfinding</span>
 				</div>
 
-				<div class="space-y-8">
-					<div class="bg-gradient-to-br from-gray-700/50 to-gray-600/50 p-6 rounded-xl shadow-lg backdrop-blur-sm">
-						<p class="mb-4 text-gray-300 leading-relaxed">This was a project that I did as a specialization assignment in school where we had a duration of 4 weeks at the end of the school semester to work on it.</p>
-						<p class="text-gray-300 leading-relaxed">
-							The project I chose to do was an efficient crowd pathfinder. The idea was to make it work somewhat like a survival game where enemies spawn and keep going towards you. The problem I was solving was that it isn't good for
-							the performance if every single enemy searches for its own path towards you, so I reduced the paths needed.
-						</p>
-					</div>
-
-					<div class="space-y-6">
-						<div class="section-header mb-6">
-							<h2 class="text-2xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">Basic Info</h2>
-							<div class="w-16 h-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full"></div>
-						</div>
-
-						<div class="bg-gradient-to-br from-gray-700/50 to-gray-600/50 p-6 rounded-xl shadow-lg backdrop-blur-sm">
-							<h3 class="text-xl font-bold mb-4 text-blue-400">Worlds</h3>
-							<ul class="space-y-3 text-gray-300">
-								<li class="flex items-start space-x-2">
-									<svg class="w-4 h-4 text-blue-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-									</svg>
-									<span>I chose to use multiple worlds for performance reasons and in a real game there would be another with all the graphics</span>
-								</li>
-								<li class="flex items-start space-x-2">
-									<svg class="w-4 h-4 text-blue-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-									</svg>
-									<span>Collision World is optimized using as few triangles as possible for better collision performance</span>
-								</li>
-								<li class="flex items-start space-x-2">
-									<svg class="w-4 h-4 text-blue-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-									</svg>
-									<span>Navigation World is optimized with more triangles but only where enemies can walk to get better paths</span>
-								</li>
-							</ul>
-						</div>
-
-						<div class="bg-gradient-to-br from-gray-700/50 to-gray-600/50 p-6 rounded-xl shadow-lg backdrop-blur-sm">
-							<h3 class="text-xl font-bold mb-4 text-blue-400">Navigation Mesh</h3>
-							<ul class="space-y-3 text-gray-300">
-								<li class="flex items-start space-x-2">
-									<svg class="w-4 h-4 text-blue-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-									</svg>
-									<span>The navigation mesh is created on world creation to make pathfinding possible and fast by only creating it once and saving all the nodes for later use</span>
-								</li>
-							</ul>
-						</div>
-
-						<div class="bg-gradient-to-br from-gray-700/50 to-gray-600/50 p-6 rounded-xl shadow-lg backdrop-blur-sm">
-							<h3 class="text-xl font-bold mb-4 text-blue-400">Octree</h3>
-							<ul class="space-y-3 text-gray-300">
-								<li class="flex items-start space-x-2">
-									<svg class="w-4 h-4 text-blue-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-									</svg>
-									<span>
-										The octree is static and created based on the navigation mesh to reduce nodes needed by only creating nodes that is close to the navigation mesh It is then used to group enemies together and find overlapping
-										paths so the amount of paths can be reduced by giving the same path to multiple enemies
-									</span>
-								</li>
-								<li class="flex items-start space-x-2">
-									<svg class="w-4 h-4 text-blue-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-									</svg>
-									<span>Enemies also use the octree to reduce how many other enemies we collision check against by only doing it against the enemies in the nearest octree nodes</span>
-								</li>
-							</ul>
-						</div>
-
-						<div class="bg-gradient-to-br from-gray-700/50 to-gray-600/50 p-6 rounded-xl shadow-lg backdrop-blur-sm">
-							<h3 class="text-xl font-bold mb-4 text-blue-400">Pathfinding</h3>
-							<ul class="space-y-3 text-gray-300">
-								<li class="flex items-start space-x-2">
-									<svg class="w-4 h-4 text-blue-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-									</svg>
-									<span>The pathfinding is done using the A* algorithm to first get a path and is then funneled to get a more realistic path</span>
-								</li>
-								<li class="flex items-start space-x-2">
-									<svg class="w-4 h-4 text-blue-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-									</svg>
-									<span>I am also using multithreading to avoid blocking the main thread to get better performance because the paths are constantly being updated one by one</span>
-								</li>
-							</ul>
-						</div>
-
-						<div class="bg-gradient-to-br from-gray-700/50 to-gray-600/50 p-6 rounded-xl shadow-lg backdrop-blur-sm">
-							<h3 class="text-xl font-bold mb-4 text-blue-400">Enemies</h3>
-							<ul class="space-y-3 text-gray-300">
-								<li class="flex items-start space-x-2">
-									<svg class="w-4 h-4 text-blue-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-									</svg>
-									<span>The enemies are simply walking towards the next point on the path it is assigned while also avoiding walls and each other</span>
-								</li>
-								<li class="flex items-start space-x-2">
-									<svg class="w-4 h-4 text-blue-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-									</svg>
-									<span>The enemy models are also gpu instanced to increase performance</span>
-								</li>
-							</ul>
-						</div>
-
-						<div class="bg-gradient-to-br from-gray-700/50 to-gray-600/50 p-6 rounded-xl shadow-lg backdrop-blur-sm">
-							<h3 class="text-xl font-bold mb-4 text-blue-400">How it works ( Gameloop )</h3>
-							<div class="bg-gray-700/30 p-6 rounded-lg">
-								<ol class="list-decimal list-inside text-gray-300 space-y-4">
-									<li>
-										<span class="text-blue-300"> Update Player Movement </span>
-									</li>
-									<li>
-										<span class="text-blue-300">Update Pathfinding Manager:</span>
-										<ul class="list-disc pl-6 mt-2 space-y-2">
-											<li>Remove paths that start in an octree node without enemies</li>
-											<li>Add paths that start in an octree node with enemies, if it didn't already exist</li>
-											<li>Loop through all paths and remove the ones that has another path through it</li>
-											<li>Change path to calculate, if the current one is done</li>
-										</ul>
-									</li>
-									<li>
-										<span class="text-blue-300">Update Enemy Manager:</span>
-										<ul class="list-disc pl-6 mt-2 space-y-2">
-											<li>Set path goal position to player position and assign path to the enemies in the same octree node as the path start</li>
-											<li>
-												Update Enemies:
-												<ul class="list-disc pl-6 mt-2 space-y-2">
-													<li>Change the target point to the farthest point it can see or one further if the closest point is the same point or further</li>
-													<li>Collide with other nearby enemies and turn away from them. Go idle if we turn to many times because then there are to many enemies around</li>
-													<li>Update rotation and movement</li>
-													<li>Make sure enemy is on the ground and doesn't go through walls</li>
-												</ul>
-											</li>
-											<li>Update enemy in octree</li>
-											<li>Update enemy instancing buffer</li>
-										</ul>
-									</li>
-								</ol>
-							</div>
-						</div>
-					</div>
-
-					<!-- Gallery Section -->
-					<div class="space-y-6">
-						<div class="section-header mb-6">
-							<h2 class="text-2xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">Gallery</h2>
-							<div class="w-16 h-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full"></div>
-						</div>
-
-						<!-- Images -->
-						<div class="bg-gradient-to-br from-gray-700/50 to-gray-600/50 p-6 rounded-xl shadow-lg backdrop-blur-sm">
-							<h3 class="text-xl font-bold mb-4 text-blue-400">Images</h3>
-							<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-								<img
-									src="https://github.com/Cappecasper03/cappecasper03.github.io/raw/master/documents/projects/school-specialization/images/school-specialization-main.png"
-									alt="School Specialization Screenshot 1"
-									class="rounded-lg w-full h-48 object-cover hover:scale-105 transition-transform cursor-pointer"
-								/>
-								<img
-									src="https://github.com/Cappecasper03/cappecasper03.github.io/raw/master/documents/projects/school-specialization/images/school-specialization-view-1.png"
-									alt="School Specialization Screenshot 2"
-									class="rounded-lg w-full h-48 object-cover hover:scale-105 transition-transform cursor-pointer"
-								/>
-								<img
-									src="https://github.com/Cappecasper03/cappecasper03.github.io/raw/master/documents/projects/school-specialization/images/school-specialization-view-2.png"
-									alt="School Specialization Screenshot 3"
-									class="rounded-lg w-full h-48 object-cover hover:scale-105 transition-transform cursor-pointer"
-								/>
-							</div>
-						</div>
-
-						<!-- Videos -->
-						<div class="bg-gradient-to-br from-gray-700/50 to-gray-600/50 p-6 rounded-xl shadow-lg backdrop-blur-sm">
-							<h3 class="text-xl font-bold mb-4 text-blue-400">Videos</h3>
-							<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-								<video class="rounded-lg w-full hover:scale-105 transition-transform cursor-pointer" controls>
-									<source src="https://github.com/Cappecasper03/cappecasper03.github.io/raw/master/documents/projects/school-specialization/videos/school-specialization.mp4" type="video/mp4" />
-								</video>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</main>
-
-		<!-- Image Overlay -->
-		<div id="imageOverlay" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center">
-			<button class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300" onclick="closeImageOverlay()">&times;</button>
-			<button id="prevImage" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-6xl hover:text-gray-300 p-4">&lt;</button>
-			<img id="overlayImage" src="" alt="Full screen image" class="max-h-[90vh] max-w-[90vw] object-contain" />
-			<button id="nextImage" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-6xl hover:text-gray-300 p-4">&gt;</button>
+				<h1 class="text-5xl md:text-6xl font-black text-white mb-6">Efficient Crowd Pathfinding</h1>
+				<p class="text-xl text-gray-300 max-w-3xl leading-relaxed">
+					A 4-week deep dive into optimizing crowd movement logic. Solving performance bottlenecks by reducing
+					redundant path calculations and utilizing spatial partitioning.
+				</p>
+			</div>
 		</div>
 
-		<script src="../js/common.js"></script>
-	</body>
+		<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+			<!-- Main Content -->
+			<div class="lg:col-span-2 space-y-8">
+
+				<!-- Technical Details -->
+				<section class="glass-panel p-8 rounded-2xl">
+					<h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+						<span class="text-green-400">#</span> Technical Architecture
+					</h2>
+
+					<div class="space-y-6">
+						<!-- Worlds -->
+						<div class="bg-white/5 p-6 rounded-xl">
+							<h3 class="text-xl font-bold text-blue-300 mb-4">Multiple World Partitioning</h3>
+							<ul class="space-y-3 text-gray-300">
+								<li class="flex items-start gap-3">
+									<div class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2"></div>
+									<span>Separated physics/collision world from navigation world.</span>
+								</li>
+								<li class="flex items-start gap-3">
+									<div class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2"></div>
+									<span>Collision world utilizes minimal geometry for fast intersection tests.</span>
+								</li>
+								<li class="flex items-start gap-3">
+									<div class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2"></div>
+									<span>Navigation world optimized with higher detail only where agents can
+										traverse.</span>
+								</li>
+							</ul>
+						</div>
+
+						<!-- Octree -->
+						<div class="bg-white/5 p-6 rounded-xl">
+							<h3 class="text-xl font-bold text-blue-300 mb-4">Static Octree & Grouping</h3>
+							<p class="text-gray-300 mb-4">
+								Octree nodes are generated based on the navmesh. This structure groups enemies sharing
+								similar origins, allowing them to share a single calculated path.
+							</p>
+							<div class="p-4 bg-black/20 rounded-lg border border-white/5">
+								<h4 class="text-sm font-bold text-green-400 mb-2 uppercase tracking-wide">Optimization
+									Win</h4>
+								<p class="text-sm text-gray-400">Drastically reduces A* calls by sharing paths and
+									limiting collision checks to nearby octree nodes.</p>
+							</div>
+						</div>
+
+						<!-- Pathfinding -->
+						<div class="bg-white/5 p-6 rounded-xl">
+							<h3 class="text-xl font-bold text-blue-300 mb-4">Multithreaded Pathfinding</h3>
+							<p class="text-gray-300 mb-2">
+								A* algorithm with path funneling for realistic movement.
+							</p>
+							<p class="text-gray-300">
+								Executed on background threads to prevent main-thread blocking during heavy
+								re-calculations.
+							</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Gameloop -->
+				<section class="glass-panel p-8 rounded-2xl">
+					<h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+						<span class="text-green-400">#</span> The Gameloop
+					</h2>
+					<div class="bg-black/20 p-6 rounded-lg font-mono text-sm leading-relaxed border border-white/5">
+						<div class="mb-4">
+							<span class="text-green-400">1. Update Player</span>
+						</div>
+						<div class="mb-4 pl-4 border-l border-white/10">
+							<span class="text-blue-300 block mb-2">2. Pathfinding Manager</span>
+							<ul class="list-disc pl-4 text-gray-400 space-y-1">
+								<li>Prune invalid paths (empty octree nodes).</li>
+								<li>Queue new paths for populated nodes.</li>
+								<li>Deduplicate paths intersecting with existing valid ones.</li>
+							</ul>
+						</div>
+						<div class="pl-4 border-l border-white/10">
+							<span class="text-purple-300 block mb-2">3. Enemy Manager</span>
+							<ul class="list-disc pl-4 text-gray-400 space-y-1">
+								<li>Assign shared paths to octree groups.</li>
+								<li>Update Enemy Entities (Instanced):</li>
+								<ul class="list-circle pl-4 text-gray-500 mt-1">
+									<li>Calculate steering (avoidance).</li>
+									<li>Physics updates (ground snapping).</li>
+									<li>Update instance buffers.</li>
+								</ul>
+							</ul>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<!-- Sidebar -->
+			<div class="space-y-8">
+				<!-- Screenshots -->
+				<section class="glass-panel p-6 rounded-2xl">
+					<h3 class="text-xl font-bold text-white mb-4">Visuals</h3>
+					<div class="grid grid-cols-1 gap-4">
+						<img src="https://github.com/Cappecasper03/cappecasper03.github.io/raw/master/documents/projects/school-specialization/images/school-specialization-main.png"
+							alt="Pathfinding Visualization"
+							class="w-full rounded-lg hover:scale-105 transition-transform cursor-pointer border border-white/5" />
+						<img src="https://github.com/Cappecasper03/cappecasper03.github.io/raw/master/documents/projects/school-specialization/images/school-specialization-view-1.png"
+							alt="Octree Debug View"
+							class="w-full rounded-lg hover:scale-105 transition-transform cursor-pointer border border-white/5" />
+					</div>
+				</section>
+
+				<!-- Videos Grid -->
+				<section class="glass-panel p-6 rounded-2xl">
+					<h3 class="text-xl font-bold text-white mb-4">Demo</h3>
+					<div class="group relative rounded-lg overflow-hidden border border-white/5">
+						<video class="w-full" controls playsinline>
+							<source
+								src="https://github.com/Cappecasper03/cappecasper03.github.io/raw/master/documents/projects/school-specialization/videos/school-specialization.mp4"
+								type="video/mp4" />
+						</video>
+						<div
+							class="p-2 bg-black/50 text-xs text-gray-400 absolute bottom-0 left-0 right-0 pointer-events-none">
+							Pathfinding Simulation</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</main>
+
+	<script src="../js/common.js"></script>
+</body>
+
 </html>
