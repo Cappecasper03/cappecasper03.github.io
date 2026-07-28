@@ -120,12 +120,12 @@ function App() {
                             className="lg:col-span-2 glass-panel rounded-2xl p-8 card-hover-effect"
                         >
                             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                                I am a <span className="text-blue-400 font-semibold">C++ Programmer</span> specializing in Game Development.
+                                I am a <span className="text-blue-400 font-semibold">C++ Programmer</span> with a focus on game development.
                                 With extensive experience in <span className="text-white">Unreal Engine</span> and proprietary in-house engines,
                                 I have a deep understanding of gameplay programming, graphics pipelines, and core systems architecture.
                             </p>
                             <p className="text-gray-400 leading-relaxed">
-                                My passion lies in squeezing every bit of performance out of code and building tools that empower other developers.
+                                I enjoy working across the full stack — from engine systems and tooling to gameplay and performance optimization.
                             </p>
                         </motion.div>
 
